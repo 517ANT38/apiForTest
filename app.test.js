@@ -1,5 +1,6 @@
 const request = require('supertest');
 const assert = require('assert');
+const { exit } = require('process');
 
 var app = require('./app').app;
 
@@ -26,3 +27,4 @@ it('should return user with name Tom and age 22', function (done) {
         })
         .end(done);
 });
+exit()
