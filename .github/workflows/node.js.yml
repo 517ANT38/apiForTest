@@ -44,6 +44,13 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm test
+  start_container:
+    runs-on: ubuntu-latest
+    name: Start container with API
+    id: my_app
+    uses: ./.github/actions/action.yml
+
+
   
     
    
