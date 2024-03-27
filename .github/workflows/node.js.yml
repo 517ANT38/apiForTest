@@ -45,16 +45,20 @@ jobs:
     - run: npm ci
     - run: npm test
     
-  start_container:
+  build_img:
     runs-on: ubuntu-latest
     needs: tests
-    steps:        
-      - name: Build and push Docker image
-        uses: docker/build-pull-action@v2
-        with:
-          context: .
-          pull: true
-          tags: myapp/app:latest
+    steps: 
+      - name: Build Docker image
+        id: myapp
+        run: docker build -t app:latest .
+  start_container:
+    runs-on: ubuntu-lates
+    needs: build_img
+    steps: 
+      - name: Start app
+        
+      uses:  
         
 
 
