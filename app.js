@@ -13,6 +13,6 @@ app.get('/user', function (request, response) {
     response.send({ name: 'Tom', age: 22 });
 });
 
-app.listen(3000);
+const server = app.listen(3000);
 
-module.exports.app = app;
+module.exports = {app,server};
