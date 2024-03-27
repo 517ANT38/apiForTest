@@ -46,9 +46,12 @@ jobs:
     - run: npm test
   start_container:
     runs-on: ubuntu-latest
-    name: Start container with API
-    id: my_app
-    uses: ./.github/actions/action.yml
+    steps:
+      - name: Start container with API
+        uses: actions/checkout@v3
+        id: my_app
+      - name: my action
+        uses: ./.github/actions/action.yml
 
 
   
