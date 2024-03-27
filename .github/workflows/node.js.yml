@@ -47,11 +47,14 @@ jobs:
     
   start_container:
     runs-on: ubuntu-latest
-    needs: build
+    needs: tests
     steps:        
-      - name: my_action
-        id: my_app
-        uses: ./
+      - name: Build and push Docker image
+        uses: docker/build-pull-action@v2
+        with:
+          context: .
+          pull: true
+          tags: myapp/app:latest
         
 
 
