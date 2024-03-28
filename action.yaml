@@ -1,0 +1,6 @@
+# action.yml
+name: 'API for check'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  
