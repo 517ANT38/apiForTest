@@ -50,15 +50,15 @@ jobs:
     needs: tests
     steps: 
       - name: Build Docker image
-        id: myapp
         run: docker build -t app:latest .
+      
   start_container:
     runs-on: ubuntu-lates
     needs: build_img
     steps: 
-      - name: Start app
-        
-      uses:  
+      - name: Start Docker image
+        run: docker run app:latest
+      
         
 
 
