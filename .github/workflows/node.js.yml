@@ -57,7 +57,7 @@ jobs:
 
     - name: Build the Docker image
       run: |
-        docker build . -t app:latest
+        docker build ../../dockerfile -t app:latest
       
   start_container:
     runs-on: ubuntu-lates
